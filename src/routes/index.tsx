@@ -2,14 +2,19 @@ import { useRoutes } from "react-router-dom"
 import { lazy } from "react"
 
 const Home = lazy(() => import('./home/Home'))
+const NotFound = lazy(() => import('./not-found/NotFound'))
 
-const index = () => {
+const RoutesController = () => {
   return useRoutes([
     {
         path: '/',
         element: <Home />
+    },
+    {
+      path: '*',
+      element: <NotFound />
     }
   ])
 }
 
-export default index
+export default RoutesController
