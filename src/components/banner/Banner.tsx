@@ -22,12 +22,12 @@ const Banner: React.FC = () => {
                     effect="fade"
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
-                    style={{ width: '50%', height: '100%' }} // Full width and height
+                    style={{ width: '50%', height: '100%' }} 
                 >
-                    {
+                    {products &&
                         products?.map((product) => (
                             <SwiperSlide key={product.id}>
-                                <img className='w-full h-full object-fill' src={product.image_link} alt="" />
+                                <img className='w-full h-full object-fill' src={product.image_link} alt="Product Image" />
                             </SwiperSlide>
                         ))
                     }

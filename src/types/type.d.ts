@@ -1,6 +1,6 @@
 export type SuspenseComponentProps = {
     children: React.ReactNode
-    fallback: React.ReactNode
+    fallback?: React.ReactNode
 }
 
 export type ContainerProps = {
