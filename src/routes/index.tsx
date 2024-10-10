@@ -8,7 +8,6 @@ const Details = lazy(() => import('./details/Details'))
 const Liked = lazy(() => import('./liked/Liked'))
 const Cart = lazy(() => import('./cart/Cart'))
 const Category = lazy(() => import('./category/Category')) 
-const Brands = lazy(() => import('./brands/Brands'))
 const NotFound = lazy(() => import('./not-found/NotFound'))
 
 const RoutesController = () => {
@@ -24,10 +23,6 @@ const RoutesController = () => {
     {
       path: '/details/:id',
       element: <Suspense><Details /></Suspense>
-    },
-    {
-      path: '/brands/:brand',
-      element: <Suspense><Brands /></Suspense>
     },
     {
       path: '/liked',

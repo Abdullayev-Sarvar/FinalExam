@@ -18,7 +18,7 @@ export type productProps = {
     readonly id:                 number;
     readonly brand:              string;
     readonly name:               string;
-    readonly price:              string;
+    readonly price:              number;
     readonly price_sign:         string;
     readonly currency:           string;
     readonly image_link:         string;

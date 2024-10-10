@@ -57,7 +57,7 @@ const Navigation: React.FC = () => {
                             <NavLink to='/cart' className="relative">
                                 <BsCart3 className="text-2xl" />
                                 {cartProductsCount > 0 && (
-                                    <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-1">
+                                    <span className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full text-sm px-2">
                                         {cartProductsCount}
                                     </span>
                                 )}
@@ -65,7 +65,7 @@ const Navigation: React.FC = () => {
                             <NavLink to='/liked' className="relative">
                                 <MdOutlineFavoriteBorder className="text-2xl" />
                                 {likedProductsCount > 0 && (
-                                    <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-1">
+                                    <span className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full text-sm px-2">
                                         {likedProductsCount}
                                     </span>
                                 )}
