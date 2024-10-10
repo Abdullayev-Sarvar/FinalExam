@@ -34,4 +34,28 @@ export type productProps = {
     readonly product_api_url:    string;
     readonly api_featured_image: string;
     readonly product_colors:     any[];
+    readonly quantity: number;
+}
+
+export type ProductColor = {
+    readonly hex_value:   string;
+    readonly colour_name: string;
+}
+
+export interface CurrencyState {
+    selected: string; 
+}
+
+export interface CartState {
+    products: Product[]; 
+}
+
+export interface LikeState {
+    likedProducts: number[]; 
+}
+
+export interface RootState {
+    currency: CurrencyState; 
+    cart: CartState; 
+    like: LikeState; 
 }

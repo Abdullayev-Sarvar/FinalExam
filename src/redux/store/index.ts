@@ -1,12 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-// import cartReducer from "../slices/cartSlice";
+import favoriteSlice from "../slice/favoriteSlice";
+import cartSlice from "../slice/cartSlice";
+import currencySlice from '../slice/currensySlice'
 import { api } from "../api";
 
-export const store = configureStore({
+const store = configureStore({
    reducer: {
-    //   cart: cartReducer,
+      favorite: favoriteSlice,
+      cart: cartSlice,
+      currency: currencySlice,
       [api.reducerPath]: api.reducer,
    },
    middleware: (getDefaultMiddleware) =>getDefaultMiddleware().concat(api.middleware),
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+export {store}

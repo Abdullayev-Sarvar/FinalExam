@@ -15,7 +15,7 @@ import applepay from '../../assets/svg/applepay.svg'
 
 const Footer: React.FC = () => {
     return (
-        <div className='bg-[#F6F6F6]'>
+        <div className='bg-[#F6F6F6] text-black'>
             <Container>
                 <div className='flex flex-col px-4'>
                     <div className='flex justify-between items-start'>
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
                                     offers, and the freshest beauty drops, straight to your inbox.
                                 </span>
                                 <form className="flex gap-2 my-2 py-2 border-b border-b-black">
-                                    <input className="w-full text-black outline-none" type="email" placeholder="Your email" />
+                                    <input className="w-full bg-transparent outline-none" type="email" placeholder="Your email" />
                                     <button><BsArrowRight className="text-3xl" /></button>
                                 </form>
                                 <div className="flex justify-between gap-1 text-3xl my-3">
