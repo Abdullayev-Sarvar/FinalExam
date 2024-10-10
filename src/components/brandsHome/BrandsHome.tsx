@@ -7,7 +7,7 @@ import solde from '../../assets/imgs/solDe.png'
 import skin1004 from '../../assets/imgs/skin1004.png'
 import Anua from '../../assets/imgs/anua.png'
 
-const BrandsHome = () => {
+const BrandsHome: React.FC = () => {
     return (
         <div className='text-black'>
             <Container>

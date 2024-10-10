@@ -9,7 +9,7 @@ import girl5 from '../../assets/imgs/girl5.png'
 import girl6 from '../../assets/imgs/girl6.png'
 import girl7 from '../../assets/imgs/girl7.png'
 
-const Community = () => {
+const Community: React.FC = () => {
   return (
     <div className='my-8 mt-12 py-10 pt-20 text-black'>
       <Container>

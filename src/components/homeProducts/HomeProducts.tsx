@@ -23,7 +23,7 @@ interface ConversionRates {
   RUB: number;
 }
 
-const HomeProducts = () => {
+const HomeProducts: React.FC = () => {
   const { data: products, isLoading, isError } = useGetProductsQuery(undefined);
   const favorites = useSelector((state: RootState) => state.favorite.favorites);
   const cart = useSelector((state: RootState) => state.cart.products);

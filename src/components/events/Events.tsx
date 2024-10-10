@@ -4,7 +4,7 @@ import Container from '../../utils';
 import { useGetProductsQuery } from '../../redux/api/productsApi';
 import { NavLink } from 'react-router-dom';
 
-const Events = () => {
+const Events: React.FC = () => {
   const { data: products, isLoading, isError } = useGetProductsQuery(undefined);
 
   if (isLoading) {

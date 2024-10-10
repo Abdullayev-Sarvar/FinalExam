@@ -2,7 +2,7 @@ import { BiRightArrowAlt } from "react-icons/bi";
 import React from 'react'
 import Container from '../../utils'
 
-const BeautyBy = () => {
+const BeautyBy: React.FC = () => {
     return (
         <div className="my-10">
             <Container>

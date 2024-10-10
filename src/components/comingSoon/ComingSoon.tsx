@@ -3,7 +3,7 @@ import { FiArrowRight } from 'react-icons/fi'
 import ComingSoonImage from '../../assets/imgs/comingSoon.png'
 import Container from '../../utils'
 
-const ComingSoon = () => {
+const ComingSoon: React.FC = () => {
     return (
         <div>
             <Container>
