@@ -24,9 +24,9 @@ type ConversionRates = {
 };
 
 interface PriceDisplayProps {
-  price: number;
-  currency: Currency;
-  conversionRates: ConversionRates;
+  price?: number;
+  currency?: Currency;
+  conversionRates?: ConversionRates;
 }
 
 interface Product {
@@ -56,7 +56,7 @@ const Liked: React.FC<PriceDisplayProps> = () => {
   };
 
   const isInCart = (productId: number) => {
-    return cart.products.some((item: Product) => item.id === productId);
+    return cart.products.some((item: any) => item.id === productId);
   };
 
   const handleFavoriteClick = (product: Product) => {

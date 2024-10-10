@@ -7,10 +7,28 @@ import Container from '../../utils';
 import { Button, notification } from 'antd';
 import { productProps as Product } from '../../types/type';
 
+type Currency = 'USD' | 'UZS' | 'EUR' | 'GBP' | 'RUB';
+
+type ConversionRates = {
+  [key: string]: number;
+  USD: number;
+  UZS: number;
+  EUR: number;
+  GBP: number;
+  RUB: number;
+};
+
 const Cart: React.FC = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cart.products);
+  const selectedCurrency = useSelector((state: RootState) => state.currency.selectedCurrency) as Currency;
+  const conversionRates = useSelector((state: RootState) => state.currency.conversionRates) as ConversionRates;
   const [confirmLoading, setConfirmLoading] = useState(false);
+
+  const convertPrice = (price: number, currency: Currency): number => {
+    const rate = conversionRates[currency];
+    return rate ? parseFloat((price * rate).toFixed(2)) : price;
+  };
 
   const handleIncrease = (productId: number) => {
     const product = cart.find(p => p.id === productId);
@@ -130,7 +148,7 @@ const Cart: React.FC = () => {
                       <img src={product.api_featured_image} alt={product.name} width={80} height={80} />
                     </td>
                     <td className="p-2 border text-center">{product.quantity}</td>
-                    <td className="p-2 border">{product.price_sign}{(product.price * product.quantity).toFixed(2)}</td>
+                    <td className="p-2 border text-center">{convertPrice(product.price * product.quantity, selectedCurrency)} {selectedCurrency}</td>
                     <td className=" border text-center">
                       <div className="mx-2 flex justify-center gap-2">
                         <Button size="large" type="primary" onClick={() => handleIncrease(product.id)}>+</Button>

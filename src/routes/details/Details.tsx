@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { setCurrency } from '../../redux/slice/currensySlice';
 import Container from '../../utils';
 import { useParams } from 'react-router-dom';
 import { useDetailsProductQuery } from '../../redux/api/productsApi';
@@ -24,11 +23,8 @@ type ConversionRates = {
   RUB: number;
 };
 
-interface PriceDisplayProps {
-  price: number;
-}
 
-const Details: React.FC<PriceDisplayProps> = () => {
+const Details: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { data: product, isError, isLoading } = useDetailsProductQuery(id!);
   const favorites = useSelector((state: RootState) => state.favorite.favorites);
@@ -85,10 +81,6 @@ const Details: React.FC<PriceDisplayProps> = () => {
 
   const handleColorSelect = (color: any) => {
     setSelectedColor(color);
-  };
-
-  const handleCurrencyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(setCurrency(e.target.value as Currency));
   };
 
   const convertPrice = (price: number, currency: string) => {
