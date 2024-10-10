@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Liked = () => {
+const Liked: React.FC = () => {
   return (
     <div>Liked</div>
   )

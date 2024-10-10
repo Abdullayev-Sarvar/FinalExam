@@ -12,7 +12,7 @@ type ProductProps = {
   product_colors: { hex_value: string; colour_name: string }[];
 };
 
-const Category = () => {
+const Category: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const { category } = useParams<{ category: string }>();
   const { data: products = [], isError, isLoading } = useGetCategoryProductsQuery(category || '');

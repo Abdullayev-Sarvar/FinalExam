@@ -9,7 +9,7 @@ import Events from '../../components/events/Events';
 import Edited from '../../components/edited/Edited';
 import Community from '../../components/communty/Community';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <>
       <Banner />
